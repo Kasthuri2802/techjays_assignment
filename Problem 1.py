@@ -28,7 +28,7 @@ def unique_in_order(arg):                   # function to remove nearby duplicat
     print(result)                           # print the output result list
 
 def get_sequence_from_user():               # function the check the given input is valid or not
-    user_input = input("Enter a sequence (list, string, tuple, etc.): ")  
+    user_input = input("Enter a sequence (list or string or tuple or etc.): ")  
     try:                                            # it will check the given input is valid or not
         sequence = ast.literal_eval(user_input) 
         return sequence                             # it will the input sequence
@@ -38,4 +38,18 @@ def get_sequence_from_user():               # function the check the given input
 inputSequence = get_sequence_from_user()            
 unique_in_order(inputSequence)
 
+"""
+output:
 
+Enter a sequence (list or string or tuple or etc.): 'AAAABBBCCDAABBB'
+['A', 'B', 'C', 'D', 'A', 'B']
+
+Enter a sequence (list or string or tuple or etc.): 'ABBCcAD'
+['A', 'B', 'C', 'c', 'A', 'D']
+
+Enter a sequence (list or string or tuple or etc.): [1,2,2,3,3]
+[1, 2, 3]
+
+
+
+"""
