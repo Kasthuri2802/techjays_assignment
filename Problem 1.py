@@ -39,6 +39,7 @@ inputSequence = get_sequence_from_user()
 unique_in_order(inputSequence)
 
 """
+
 output:
 
 Enter a sequence (list or string or tuple or etc.): 'AAAABBBCCDAABBB'
@@ -49,7 +50,5 @@ Enter a sequence (list or string or tuple or etc.): 'ABBCcAD'
 
 Enter a sequence (list or string or tuple or etc.): [1,2,2,3,3]
 [1, 2, 3]
-
-
 
 """
