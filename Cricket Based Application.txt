@@ -1,0 +1,45 @@
+Table users {
+  user_id integer [primary key]
+  username varchar(50)
+  password varchar(50)
+  email varchar(50)
+}
+Table match{
+  match_type varchar(50) // test or ODI or T20
+  match_id varchar(20) [primary key]
+  start_date datetime
+  end_date datetime
+  venue varchar(50)
+  ground_name varchar(50)
+  result varchar(50)
+}
+Table team{
+  match_id varchar(20) [primary key]
+  team_id varchar(20)  [primary key]
+  team_name varchar(50)
+  team_type varchar(50) //international or domestic or womens
+  captain varchar(50)
+}
+Table players{
+  player_id integer [primary key] 
+  player_name varchar(50)
+  age integer
+  role varchar(50) // batsman or bowler or wicket keeper or captain
+  team_id varchar(50) [primary key]
+}
+Table scoreCard{
+  no_of_fours integer 
+  no_of_sixes integer
+  no_of_runs integer
+  total_score integer
+  wickets_taken integer
+  balls_faced integer
+  overs_bowled integer
+  match_id integer [primary key]
+  player_id integer [primary key]
+}
+
+Ref: match.match_id < players.player_id
+Ref: scoreCard.player_id > players.player_id
+Ref: match.match_id - team.team_id
+Ref: team.team_id < players.player_name
